@@ -1,6 +1,15 @@
 <?php
+session_start();
+   include("connection.php");
+   include("functions.php");
 
 
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    // SOMETHING WAS POSTED
+   $user_name = $_POST['user_name'];
+   $password = $_POST['password'];
+}
+     
 ?>
 
 <html>
@@ -31,7 +40,7 @@
             }
        </style>
        <div id="box">
-            <div style="font-size:20px; margin:10px; color:white;">Login</div>
+            <div style="font-size:20px; margin:10px; color:white;">Signup</div>
             <form method="post">
                 <input id="text" type="text" name="user_name"><br><br>
                 <input id="text" type="password" name="password"><br><br>
