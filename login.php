@@ -30,10 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
 
        }
-
+       echo "Wrong username or password";
             
         } else {
-            echo "Please enter some valid information";
+            echo "Wrong username or password";
     };
 }
   
