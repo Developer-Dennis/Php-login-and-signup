@@ -1,5 +1,42 @@
 <?php
 
+session_start();
+   include("connection.php");
+   include("functions.php");
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    // SOMETHING WAS POSTED
+   $user_name = $_POST['user_name'];
+   $password = $_POST['password'];
+
+    if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
+
+        // read from database
+        $user_id = random_num(20);
+            $query = "select * from users where user_name = '$user_name' limit 1";
+       $results = mysqli_query($con,$query);
+
+       if($results){
+            if($results && mysqli_num_rows($results) > 0){
+
+                $user_data = mysqli_fetch_assoc($results);
+
+                if ($user_data['password'] === $password);{
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    header("Location: index.php");
+                    die;
+                }
+            }
+
+       }
+
+            
+        } else {
+            echo "Please enter some valid information";
+    };
+}
+  
 
 ?>
 
