@@ -19,4 +19,9 @@ $user_data = check_login($con);
        <br>
        Hello, <?php echo $user_data['user_name'] ?>
     </body>
+    <style>
+        *{
+            background: grey;
+        }
+    </style>
 </html>
