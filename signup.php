@@ -64,5 +64,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
        </div>
     </body>
+    <style>
+        *{
+            background: grey;
+        }
+    </style>
 </html>
 
